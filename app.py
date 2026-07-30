@@ -13,23 +13,10 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-/* Main background */
 .stApp{
     background-color:#FAF7FF;
 }
 
-/* Sidebar */
-[data-testid="stSidebar"]{
-    background-color:#6A4C93;
-}
-
-[data-testid="stSidebar"] *{
-    background-color:#6A4C93;
-    width:260px;
-}
-
-
-/* Buttons */
 .stButton>button{
     background-color:#B185DB;
     color:white;
