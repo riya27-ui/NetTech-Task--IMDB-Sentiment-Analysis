@@ -36,15 +36,19 @@ st.sidebar.title("📌IMDb Analyzer")
 
 page = st.sidebar.radio(
     "",
-    ["Home", "🎥 Predict Review", " About"]
+    ["Home", "🎥 Predict Review", "About"]
 )
 
 if page == "Home":
 
-    st.title("🎬 IMDb Movie Reviews Sentiment Analysis")
-
-    st.markdown("### Powered by NLP & Machine Learning")
-
+st.markdown(
+    "<h1 style='color:#222222;'>🎬 IMDb Movie Reviews Sentiment Analysis</h1>",
+    unsafe_allow_html=True
+)
+st.markdown(
+    "<h3 style='color:#444444;'>Powered by NLP & Machine Learning</h3>",
+    unsafe_allow_html=True
+)
     st.info("""
 !! Welcome !!
 
@@ -86,7 +90,7 @@ elif page == "🎥 Predict Review":
 
                 st.error("!!Negative Review!!")
 
-elif page == " About":
+elif page == "About":
 
     st.title(" About this Project")
 
