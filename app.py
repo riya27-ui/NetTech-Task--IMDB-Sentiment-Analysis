@@ -16,8 +16,10 @@ st.markdown("""
 .stApp{
     background-color:#FAF7FF;
 }
+[data-testid="stAppViewContainer"]{
+    color:#222222;
+}
 
-/* Sidebar */
 [data-testid="stSidebar"]{
     background-color:#6A4C93;
 }
@@ -26,7 +28,6 @@ st.markdown("""
     color:white;
 }
 
-/* Buttons */
 .stButton>button{
     background-color:#B185DB;
     color:white;
