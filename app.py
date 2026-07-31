@@ -17,6 +17,53 @@ st.markdown("""
     background-color:#FAF7FF;
 }
 
+/* Sidebar */
+[data-testid="stSidebar"]{
+    background-color:#6A4C93;
+}
+
+[data-testid="stSidebar"] *{
+    color:white;
+}
+
+/* Buttons */
+.stButton>button{
+    background-color:#B185DB;
+    color:white;
+    border-radius:12px;
+    font-weight:bold;
+    border:none;
+}
+
+.stButton>button:hover{
+    background-color:#9D6BCF;
+}
+
+</style>
+""", unsafe_allow_html=True) 
+st.markdown("""
+<style>
+
+.stApp{
+    background-color:#FAF7FF;
+}
+
+[data-testid="stSidebar"]{
+    background-color:#6A4C93;
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] div {
+    color:white !important;
+}
+
+.block-container{
+    padding-top:3rem;
+}
+
 .stButton>button{
     background-color:#B185DB;
     color:white;
@@ -36,19 +83,15 @@ st.sidebar.title("📌IMDb Analyzer")
 
 page = st.sidebar.radio(
     "",
-    ["Home", "🎥 Predict Review", "About"]
+    ["Home", "🎥 Predict Review", " About"]
 )
 
 if page == "Home":
 
-st.markdown(
-    "<h1 style='color:#222222;'>🎬 IMDb Movie Reviews Sentiment Analysis</h1>",
-    unsafe_allow_html=True
-)
-st.markdown(
-    "<h3 style='color:#444444;'>Powered by NLP & Machine Learning</h3>",
-    unsafe_allow_html=True
-)
+    st.title("🎬 IMDb Movie Reviews Sentiment Analysis")
+
+    st.markdown("### Powered by NLP & Machine Learning")
+
     st.info("""
 !! Welcome !!
 
@@ -90,7 +133,7 @@ elif page == "🎥 Predict Review":
 
                 st.error("!!Negative Review!!")
 
-elif page == "About":
+elif page == " About":
 
     st.title(" About this Project")
 
@@ -101,7 +144,7 @@ elif page == "About":
 
 **Vectorization:** TF-IDF
 
-**Accuracy:** **90.56%**
+**Accuracy:** **90.01%**
 
 **Dataset:** IMDb Movie Reviews Dataset
 
