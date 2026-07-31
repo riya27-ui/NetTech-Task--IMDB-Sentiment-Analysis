@@ -139,7 +139,7 @@ elif page == "Upload Dataset":
     st.title("📂 Upload Dataset")
 
     st.markdown("---")
-    st.subheader("📂 Upload a Dataset")
+    st.subheader("Upload A Dataset To Analyze")
 
     uploaded_file = st.file_uploader(
         "Upload a CSV file containing movie reviews",
