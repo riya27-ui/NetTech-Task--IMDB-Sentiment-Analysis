@@ -84,7 +84,7 @@ st.sidebar.title("📌IMDb Analyzer")
 
 page = st.sidebar.radio(
     "",
-    ["Home", "🎥 Predict Review", " About"]
+    ["Home", "🎥 Predict Review","Upload Dataset", " About"]
 )
 
 if page == "Home":
@@ -174,7 +174,9 @@ if uploaded_file is not None:
                 "text/csv"
             )
 
-elif page == " About":
+elif page == "📂 Upload Dataset":
+
+elif page == "About":
 
     st.title(" About this Project")
 
