@@ -108,7 +108,7 @@ This application here predicts whether an IMDb movie review is **Positive** or *
 
 elif page == "🎥 Predict Review":
 
-    st.title("🎥 Predict Movie Review")
+    st.title("🎥 Predict a Movie Review")
 
     review = st.text_area(
         "Enter your review",
@@ -139,7 +139,7 @@ elif page == " About":
     st.title(" About this Project")
 
     st.markdown("""
-### 👩‍💻 IMDb Movie Review Sentiment Analysis
+### 👩‍💻 IMDb Movie Review Sentiment Analysis 👩‍💻 
 
  **🛠 Machine Learning Model:**  Logistic Regression
 
@@ -148,6 +148,7 @@ elif page == " About":
 **Accuracy:** **90.01%**
 
 **Dataset:** IMDb Movie Reviews Dataset
+
 
 **Developer:** Riya Prashant Bhosle
 """)
