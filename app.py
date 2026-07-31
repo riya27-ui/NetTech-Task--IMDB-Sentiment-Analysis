@@ -134,47 +134,49 @@ elif page == "🎥 Predict Review":
 
                 st.error("!!Negative Review!!")
 
-st.markdown("---")
-st.subheader("📂 Upload a Dataset")
-
-uploaded_file = st.file_uploader(
-    "Upload a CSV file containing movie reviews",
-    type=["csv"]
-)
-
-if uploaded_file is not None:
-    import pandas as pd
-
-    df = pd.read_csv(uploaded_file)
-
-    st.write("Dataset Preview")
-    st.dataframe(df.head())
-
-    if "review" not in df.columns:
-        st.error("CSV must contain a column named 'review'")
-    else:
-        if st.button("Predict Dataset"):
-
-            reviews = vectorizer.transform(df["review"])
-
-            predictions = model.predict(reviews)
-
-            df["Prediction"] = predictions
-
-            st.success("Prediction Completed!")
-
-            st.dataframe(df)
-
-            csv = df.to_csv(index=False).encode("utf-8")
-
-            st.download_button(
-                "⬇ Download Results",
-                csv,
-                "predicted_reviews.csv",
-                "text/csv"
-            )
-
 elif page == "📂 Upload Dataset":
+
+    st.title("📂 Upload Dataset")
+
+    st.markdown("---")
+    st.subheader("📂 Upload a Dataset")
+
+    uploaded_file = st.file_uploader(
+        "Upload a CSV file containing movie reviews",
+        type=["csv"]
+    )
+
+    if uploaded_file is not None:
+        import pandas as pd
+
+        df = pd.read_csv(uploaded_file)
+
+        st.write("Dataset Preview")
+        st.dataframe(df.head())
+
+        if "review" not in df.columns:
+            st.error("CSV must contain a column named 'review'")
+        else:
+            if st.button("Predict Dataset"):
+
+                reviews = vectorizer.transform(df["review"])
+
+                predictions = model.predict(reviews)
+
+                df["Prediction"] = predictions
+
+                st.success("Prediction Completed!")
+
+                st.dataframe(df)
+
+                csv = df.to_csv(index=False).encode("utf-8")
+
+                st.download_button(
+                    "⬇ Download Results",
+                    csv,
+                    "predicted_reviews.csv",
+                    "text/csv"
+                )
 
 elif page == "About":
 
@@ -187,7 +189,7 @@ elif page == "About":
 
 **Vectorization:** TF-IDF
 
-**Accuracy:** **90.01%**
+**Accuracy:** **91.01%**
 
 **Dataset:** IMDb Movie Reviews Dataset
 
