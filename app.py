@@ -170,48 +170,48 @@ elif page == "Upload Dataset":
         if "review" not in df.columns:
             st.error("CSV must contain a column named 'review'")
         else:
-            if st.button("Predict Dataset"):
+    if st.button("Predict Dataset"):
 
-    reviews = vectorizer.transform(df["review"])
+        reviews = vectorizer.transform(df["review"])
 
-    predictions = model.predict(reviews)
+        predictions = model.predict(reviews)
 
-    df["Prediction"] = predictions
+        df["Prediction"] = predictions
 
-    positive = (df["Prediction"] == "positive").sum()
-    negative = (df["Prediction"] == "negative").sum()
+        positive = (df["Prediction"] == "positive").sum()
+        negative = (df["Prediction"] == "negative").sum()
 
-    st.success("Prediction Completed!")
+        st.success("Prediction Completed!")
 
-    col1, col2, col3 = st.columns(3)
+        col1, col2, col3 = st.columns(3)
 
-    col1.metric("Total Reviews", len(df))
-    col2.metric("Positive", positive)
-    col3.metric("Negative", negative)
+        col1.metric("Total Reviews", len(df))
+        col2.metric("Positive", positive)
+        col3.metric("Negative", negative)
 
-    st.dataframe(df)
+        st.dataframe(df)
 
-    import matplotlib.pyplot as plt
+        import matplotlib.pyplot as plt
 
-    fig, ax = plt.subplots()
+        fig, ax = plt.subplots()
 
-    ax.pie(
+        ax.pie(
         [positive, negative],
         labels=["Positive", "Negative"],
         autopct="%1.1f%%"
-    )
+        )
 
-    ax.set_title("Sentiment Distribution")
+        ax.set_title("Sentiment Distribution")
 
-    st.pyplot(fig)
+        st.pyplot(fig)
 
-    csv = df.to_csv(index=False).encode("utf-8")
+        csv = df.to_csv(index=False).encode("utf-8")
 
-    st.download_button(
-        "⬇ Download Results",
-        csv,
-        "predicted_reviews.csv",
-        "text/csv"
+        st.download_button(
+            "⬇ Download Results",
+            csv,
+            "predicted_reviews.csv",
+            "text/csv"
     )
 elif page == "About":
 
