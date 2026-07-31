@@ -160,61 +160,62 @@ elif page == "Upload Dataset":
     )
 
     if uploaded_file is not None:
+
         import pandas as pd
+        import matplotlib.pyplot as plt
 
         df = pd.read_csv(uploaded_file)
 
         st.write("Dataset Preview")
         st.dataframe(df.head())
 
-    if "review" not in df.columns:
-        st.error("CSV must contain a column named 'review'")
+        if "review" not in df.columns:
 
-else:
+            st.error("CSV must contain a column named 'review'")
 
-    if st.button("Predict Dataset"):
+        else:
 
-        reviews = vectorizer.transform(df["review"])
+            if st.button("Predict Dataset"):
 
-        predictions = model.predict(reviews)
+                reviews = vectorizer.transform(df["review"])
 
-        df["Prediction"] = predictions
+                predictions = model.predict(reviews)
 
-        positive = (df["Prediction"] == "positive").sum()
-        negative = (df["Prediction"] == "negative").sum()
+                df["Prediction"] = predictions
 
-        st.success("Prediction Completed!")
+                positive = (df["Prediction"] == "positive").sum()
+                negative = (df["Prediction"] == "negative").sum()
 
-        col1, col2, col3 = st.columns(3)
+                st.success("Prediction Completed!")
 
-        col1.metric("Total Reviews", len(df))
-        col2.metric("Positive", positive)
-        col3.metric("Negative", negative)
+                col1, col2, col3 = st.columns(3)
 
-        st.dataframe(df)
+                col1.metric("Total Reviews", len(df))
+                col2.metric("Positive", positive)
+                col3.metric("Negative", negative)
 
-        import matplotlib.pyplot as plt
+                st.dataframe(df)
 
-        fig, ax = plt.subplots()
+                fig, ax = plt.subplots()
 
-        ax.pie(
-            [positive, negative],
-            labels=["Positive", "Negative"],
-            autopct="%1.1f%%"
-        )
+                ax.pie(
+                    [positive, negative],
+                    labels=["Positive", "Negative"],
+                    autopct="%1.1f%%"
+                )
 
-        ax.set_title("Sentiment Distribution")
+                ax.set_title("Sentiment Distribution")
 
-        st.pyplot(fig)
+                st.pyplot(fig)
 
-        csv = df.to_csv(index=False).encode("utf-8")
+                csv = df.to_csv(index=False).encode("utf-8")
 
-        st.download_button(
-            "⬇ Download Results",
-            csv,
-            "predicted_reviews.csv",
-            "text/csv"
-        )
+                st.download_button(
+                    "⬇ Download Results",
+                    csv,
+                    "predicted_reviews.csv",
+                    "text/csv"
+                )
 elif page == "About":
 
     st.title("About this Project")
