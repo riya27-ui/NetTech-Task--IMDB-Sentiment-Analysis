@@ -168,8 +168,10 @@ elif page == "Upload Dataset":
         st.dataframe(df.head())
 
         if "review" not in df.columns:
-            st.error("CSV must contain a column named 'review'")
-        else:
+    st.error("CSV must contain a column named 'review'")
+
+else:
+
     if st.button("Predict Dataset"):
 
         reviews = vectorizer.transform(df["review"])
@@ -196,9 +198,9 @@ elif page == "Upload Dataset":
         fig, ax = plt.subplots()
 
         ax.pie(
-        [positive, negative],
-        labels=["Positive", "Negative"],
-        autopct="%1.1f%%"
+            [positive, negative],
+            labels=["Positive", "Negative"],
+            autopct="%1.1f%%"
         )
 
         ax.set_title("Sentiment Distribution")
@@ -212,7 +214,7 @@ elif page == "Upload Dataset":
             csv,
             "predicted_reviews.csv",
             "text/csv"
-    )
+        )
 elif page == "About":
 
     st.title("About this Project")
