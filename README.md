@@ -2,7 +2,7 @@
 
 A Natural Language Processing (NLP) web application that predicts whether an IMDb movie review is **Positive** or **Negative** using **TF-IDF Vectorization** and a **Logistic Regression** model.
 
-## 📌 Project Overview
+## 📌 Project Overview📌 
 
 This project analyzes movie reviews from the IMDb dataset and classifies each review as either **Positive** or **Negative**.
 
@@ -16,18 +16,17 @@ The application was developed using Python and deployed with Streamlit, allowing
 - TF-IDF Vectorization
 - Logistic Regression Model
 - Interactive Streamlit Web Application
-- Model Accuracy: **90.56%**
+- Model Accuracy: **90.01%**
 
 ## Technologies Used
 
 - Python
-- Streamlit
+- Streamlit(to deploy the model)
 - Scikit-learn
 - Pandas
 - NumPy
 - Joblib
 
----
 
 ## 📂 Dataset
 
@@ -51,27 +50,17 @@ The application was developed using Python and deployed with Streamlit, allowing
 9. Model Evaluation
 10. Streamlit Deployment
 
-##Model Performance
 
+Model Performance
 | Metric | Result |
-| Accuracy | **90.56%** |
+| Accuracy | **90.01%** |
 
 ## Running the Project
-
-Github Repository: 
 
 ## Application
 
 The application allows users to:
 
-- Enter a movie review
+- Enter/type a movie review
 - Predict whether it is Positive or Negative
 - View results instantly using a simple Streamlit interface
-
----
-
-## 👩‍💻 Developer
-
-**Riya Prashant Bhosle**
-
-M.Sc. Data Science Student
