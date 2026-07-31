@@ -141,7 +141,8 @@ elif page == " About":
     st.markdown("""
 ### 👩‍💻 IMDb Movie Review Sentiment Analysis
 
-** 🛠 Machine Learning Model:** Logistic Regression
+ ** 🛠 Machine Learning Model:** 
+ Logistic Regression
 
 **Vectorization:** TF-IDF
 
