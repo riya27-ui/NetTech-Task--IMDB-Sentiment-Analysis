@@ -167,8 +167,8 @@ elif page == "Upload Dataset":
         st.write("Dataset Preview")
         st.dataframe(df.head())
 
-        if "review" not in df.columns:
-    st.error("CSV must contain a column named 'review'")
+    if "review" not in df.columns:
+        st.error("CSV must contain a column named 'review'")
 
 else:
 
