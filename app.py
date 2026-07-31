@@ -28,6 +28,8 @@ st.markdown("""
     color:white;
 }
 
+
+
 .stButton>button{
     background-color:#B185DB;
     color:white;
@@ -76,6 +78,17 @@ st.markdown("""
 .stButton>button:hover{
     background-color:#9D6BCF;
 }
+.stTextArea textarea {
+    background-color: white !important;
+    color: black !important;
+    border: 2px solid #B185DB !important;
+    border-radius: 10px;
+}
+
+.stTextArea textarea::placeholder {
+    color: gray !important;
+}
+
 
 </style>
 """, unsafe_allow_html=True)
