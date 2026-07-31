@@ -84,7 +84,7 @@ st.sidebar.title("📌IMDb Analyzer")
 
 page = st.sidebar.radio(
     "",
-    ["Home", "🎥 Predict Review","Upload Dataset", " About"]
+    ["Home", "🎥 Predict Review","Upload Dataset", "About"]
 )
 
 if page == "Home":
@@ -134,7 +134,7 @@ elif page == "🎥 Predict Review":
 
                 st.error("!!Negative Review!!")
 
-elif page == "📂 Upload Dataset":
+elif page == "Upload Dataset":
 
     st.title("📂 Upload Dataset")
 
@@ -180,7 +180,7 @@ elif page == "📂 Upload Dataset":
 
 elif page == "About":
 
-    st.title(" About this Project")
+    st.title("About this Project")
 
     st.markdown("""
 ### 👩‍💻 IMDb Movie Review Sentiment Analysis 👩‍💻 
